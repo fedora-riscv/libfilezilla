@@ -1,6 +1,6 @@
 Name: libfilezilla
-Version: 0.4.0.1
-Release: 2%{?dist}
+Version: 0.5.0
+Release: 1%{?dist}
 URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -48,6 +48,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Mon Apr 25 2016 Jon Ciesla <limburgher@gmail.com> - 0.5.0-1
+- Latest upstream.
+
 * Mon Apr 04 2016 Jon Ciesla <limburgher@gmail.com> - 0.4.0.1-2
 - Dropped buildroot, Group, buildroot scrup, and added --disable-static and
 - isa-specific Requires.

@@ -1,10 +1,11 @@
 Name: libfilezilla
 Version: 0.9.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 Source0: http://download.sourceforge.net/sourceforge/filezilla/%{name}-%{version}.tar.bz2
+Patch0:  libfilezilla-0.9.2-util.patch
 
 %package devel
 Summary: Development files for C++ Library for FileZilla
@@ -23,6 +24,8 @@ This package contains files needed to compile code using libfilezilla.
 
 %prep
 %setup -q
+
+%patch0 -p2
 
 %build
 %configure --disable-static
@@ -48,6 +51,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Fri Jun 02 2017 Gwyn Ciesla <limburgher@gmail.com> - 0.9.2-2
+- Patch for filezilla build issue, from upstream.
+
 * Thu May 25 2017 Gwyn Ciesla <limburgher@gmail.com> - 0.9.2-1
 - Latest upstream.
 

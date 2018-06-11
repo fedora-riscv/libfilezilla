@@ -1,5 +1,5 @@
 Name: libfilezilla
-Version: 0.12.2
+Version: 0.12.3
 Release: 1%{?dist}
 URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
@@ -47,6 +47,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Mon Jun 11 2018 Gwyn Ciesla <limburgher@gmail.com> - 0.12.3-1
+- Latest upstream.
+
 * Mon May 07 2018 Gwyn Ciesla <limburgher@gmail.com> - 0.12.2-1
 - Latest upstream.
 

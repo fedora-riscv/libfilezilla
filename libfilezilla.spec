@@ -5,6 +5,7 @@ URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 Source0: http://download.sourceforge.net/sourceforge/filezilla/%{name}-%{version}.tar.bz2
+BuildRequires: gcc-c++
 
 %package devel
 Summary: Development files for C++ Library for FileZilla

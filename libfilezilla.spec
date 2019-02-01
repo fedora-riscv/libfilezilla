@@ -1,6 +1,6 @@
 Name: libfilezilla
 Version: 0.15.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -46,6 +46,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.15.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Mon Nov 26 2018 Gwyn Ciesla <limburgher@gmail.com> - 0.15.1-1
 - 0.15.1
 

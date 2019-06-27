@@ -1,11 +1,11 @@
 Name: libfilezilla
-Version: 0.16.0
+Version: 0.17.1
 Release: 1%{?dist}
 URL: http://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 Source0: http://download.sourceforge.net/sourceforge/filezilla/%{name}-%{version}.tar.bz2
-BuildRequires: gcc-c++ nettle-devel
+BuildRequires: gcc-c++ nettle-devel gnutls-devel gettext
 
 %package devel
 Summary: Development files for C++ Library for FileZilla
@@ -34,7 +34,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %ldconfig_scriptlets
 
-%files
+%find_lang %{name}
+
+%files -f %{name}.lang
 %license COPYING
 %doc AUTHORS ChangeLog NEWS README
 %{_libdir}/*.so.*
@@ -46,6 +48,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Thu Jun 27 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.17.1-1
+- 0.17.1
+
 * Tue Apr 30 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.16.0-1
 - 0.16.0
 

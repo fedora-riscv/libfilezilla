@@ -1,19 +1,24 @@
 Name: libfilezilla
 Version: 0.17.1
-Release: 1%{?dist}
-URL: http://lib.filezilla-project.org/
+Release: 2%{?dist}
+URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
-Source0: http://download.sourceforge.net/sourceforge/filezilla/%{name}-%{version}.tar.bz2
-BuildRequires: gcc-c++ nettle-devel gnutls-devel gettext
 
-%package devel
-Summary: Development files for C++ Library for FileZilla
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Source0: https://download.filezilla-project.org/%{name}/%{name}-%{version}.tar.bz2
+
+BuildRequires: gcc-c++
+BuildRequires: gettext
+BuildRequires: gnutls-devel
+BuildRequires: nettle-devel
 
 %description
 libfilezilla is a small and modern C++ library, offering some basic
 functionality to build high-performing, platform-independent programs.
+
+%package devel
+Summary: Development files for C++ Library for FileZilla
+Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 libfilezilla is a small and modern C++ library, offering some basic
@@ -22,15 +27,14 @@ functionality to build high-performing, platform-independent programs.
 This package contains files needed to compile code using libfilezilla.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 %configure --disable-static
-make %{?_smp_mflags}
+%make_build
 
 %install
-make DESTDIR=$RPM_BUILD_ROOT install
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+%make_install
 
 %ldconfig_scriptlets
 
@@ -39,15 +43,21 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/*.so.*
+%{_libdir}/libfilezilla.so.*
 
 %files devel
+%exclude %{_libdir}/*.la
 %doc doc/*
-%{_libdir}/*.so
 %{_includedir}/*
+%{_libdir}/libfilezilla.so
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Wed Jul 31 2019 Phil Wyett <philwyett@kathenas.org> - 0.17.1-2
+- Use HTTPS and fix Source0 URL.
+- Remove old unused patch.
+- Modernize and cleanup spec file.
+
 * Thu Jun 27 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.17.1-1
 - 0.17.1
 

@@ -1,6 +1,6 @@
 Name: libfilezilla
-Version: 0.17.1
-Release: 3%{?dist}
+Version: 0.18.0
+Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -53,6 +53,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Fri Aug 02 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.0-1
+- 0.18.0
+
 * Wed Jul 31 2019 Phil Wyett <philwyett@kathenas.org> - 0.17.1-3
 - Use HTTPS and fix Source0 URL.
 - Remove old unused patch.

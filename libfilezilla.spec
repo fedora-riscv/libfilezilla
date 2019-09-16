@@ -1,6 +1,6 @@
 Name: libfilezilla
-Version: 0.17.1
-Release: 2%{?dist}
+Version: 0.18.1
+Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -53,10 +53,19 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
-* Wed Jul 31 2019 Phil Wyett <philwyett@kathenas.org> - 0.17.1-2
+* Thu Aug 15 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.1-1
+- 0.18.1
+
+* Fri Aug 02 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.0-1
+- 0.18.0
+
+* Wed Jul 31 2019 Phil Wyett <philwyett@kathenas.org> - 0.17.1-3
 - Use HTTPS and fix Source0 URL.
 - Remove old unused patch.
 - Modernize and cleanup spec file.
+
+* Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.17.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
 * Thu Jun 27 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.17.1-1
 - 0.17.1

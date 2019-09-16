@@ -1,5 +1,5 @@
 Name: libfilezilla
-Version: 0.18.1
+Version: 0.18.2
 Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
@@ -53,6 +53,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Mon Sep 16 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.2-1
+- 0.18.2
+
 * Thu Aug 15 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.1-1
 - 0.18.1
 

@@ -1,0 +1,11 @@
+diff -Nrup lib/libfilezilla/apply.hpp lib/libfilezilla/apply.hpp
+--- lib/libfilezilla/apply.hpp	2015-11-02 06:47:31.000000000 -0700
++++ lib/libfilezilla/apply.hpp	2019-09-23 09:35:06.438758927 -0600
+@@ -1,6 +1,7 @@
+ #ifndef LIBFILEZILLA_APPLY_HEADER
+ #define LIBFILEZILLA_APPLY_HEADER
+ 
++#include <cstddef>
+ #include <utility>
+ #include <tuple>
+ #include <type_traits>

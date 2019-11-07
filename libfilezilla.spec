@@ -1,12 +1,11 @@
 Name: libfilezilla
-Version: 0.18.2
-Release: 2%{?dist}
+Version: 0.19.0
+Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 
 Source0: https://download.filezilla-project.org/%{name}/%{name}-%{version}.tar.bz2
-Patch0: include.patch
 
 BuildRequires: gcc-c++
 BuildRequires: gettext
@@ -54,6 +53,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Thu Nov 07 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.19.0-1
+- 0.19.0
+
 * Mon Sep 23 2019 Gwyn Ciesla <gwync@protonmail.com> - 0.18.2-2
 - GCC 10 patch, https://trac.filezilla-project.org/ticket/12000
 

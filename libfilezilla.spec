@@ -1,11 +1,16 @@
 Name: libfilezilla
 Version: 0.23.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 
 Source0: https://download.filezilla-project.org/%{name}/%{name}-%{version}.tar.bz2
+
+%if 0%{?rhel} == 8
+# libuv-devel not present on s390x on EL-8
+ExcludeArch: s390x
+%endif
 
 BuildRequires: gcc-c++
 BuildRequires: gettext
@@ -53,6 +58,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Wed Aug 12 2020 Gwyn Ciesla <gwync@protonmail.com> - 0.23.0-3
+- Exclude s390x on EL-8 due to missing libuv-devel
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.23.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 

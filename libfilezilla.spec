@@ -1,6 +1,6 @@
 Name: libfilezilla
-Version: 0.23.0
-Release: 3%{?dist}
+Version: 0.24.0
+Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -48,7 +48,7 @@ This package contains files needed to compile code using libfilezilla.
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/libfilezilla.so.8*
+%{_libdir}/libfilezilla.so.9*
 
 %files devel
 %exclude %{_libdir}/*.la
@@ -58,6 +58,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Fri Aug 21 2020 Gwyn Ciesla <gwync@protonmail.com> - 0.24.0-1
+- 0.24.0
+
 * Wed Aug 12 2020 Gwyn Ciesla <gwync@protonmail.com> - 0.23.0-3
 - Exclude s390x on EL-8 due to missing libuv-devel
 

@@ -1,11 +1,12 @@
 Name: libfilezilla
 Version: 0.25.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
 
 Source0: https://download.filezilla-project.org/%{name}/%{name}-%{version}.tar.bz2
+Patch0: %{name}-gcc11.patch
 
 %if 0%{?rhel} == 8
 # libuv-devel not present on s390x on EL-8
@@ -58,6 +59,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Mon Oct 19 2020 Jeff Law <law@redhat.com> - 0.25.0-2
+- Fix missing #include for gcc-11
+
 * Tue Oct 13 2020 Gwyn Ciesla <gwync@protonmail.com> - 0.25.0-1
 - 0.25.0
 

@@ -1,6 +1,6 @@
 Name: libfilezilla
-Version: 0.25.0
-Release: 2%{?dist}
+Version: 0.26.0
+Release: 1%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPLv2+
@@ -49,7 +49,7 @@ This package contains files needed to compile code using libfilezilla.
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS ChangeLog NEWS README
-%{_libdir}/libfilezilla.so.10*
+%{_libdir}/libfilezilla.so.11*
 
 %files devel
 %exclude %{_libdir}/*.la
@@ -59,6 +59,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Thu Dec 17 2020 Gwyn Ciesla <gwync@protonmail.com> - 0.26.0-1
+- 0.26.0
+
 * Mon Oct 19 2020 Jeff Law <law@redhat.com> - 0.25.0-2
 - Fix missing #include for gcc-11
 

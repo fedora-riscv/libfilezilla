@@ -17,6 +17,7 @@ BuildRequires: gcc-c++
 BuildRequires: gettext
 BuildRequires: gnutls-devel
 BuildRequires: nettle-devel
+BuildRequires: make
 
 %description
 libfilezilla is a small and modern C++ library, offering some basic

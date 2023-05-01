@@ -1,6 +1,6 @@
 Name: libfilezilla
 Version: 0.41.1
-Release: 1%{?dist}
+Release: 1.rv64%{?dist}
 URL: https://lib.filezilla-project.org/
 Summary: C++ Library for FileZilla
 License: GPL-2.0-or-later
@@ -11,6 +11,10 @@ Patch0: gcc13.patch
 %if 0%{?rhel} == 8
 # libuv-devel not present on s390x on EL-8
 ExcludeArch: s390x
+%endif
+
+%ifarch riscv64
+%global optflags %(echo %{optflags} -pthread)
 %endif
 
 BuildRequires: gcc-c++
@@ -59,6 +63,9 @@ This package contains files needed to compile code using libfilezilla.
 %{_libdir}/pkgconfig/libfilezilla.pc
 
 %changelog
+* Mon May 01 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 0.41.1-1.rv64
+- Fix build on riscv64.
+
 * Mon Mar 27 2023 Gwyn Ciesla <gwync@protonmail.com> - 0.41.1-1
 - 0.41.1
 
